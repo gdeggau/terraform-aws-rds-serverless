@@ -17,7 +17,7 @@ resource "aws_subnet" "subnet_database1" {
 }
 
 resource "aws_db_subnet_group" "default" {
-  name       = "${var.product}-${var.project}-${var.env}-${var.envVersion}-sg"
+  name       = local.subnet_group_name
   subnet_ids = [aws_subnet.subnet_database.id, aws_subnet.subnet_database1.id]
   tags       = local.tags
 }
