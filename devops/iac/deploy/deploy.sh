@@ -10,7 +10,7 @@ check_sucessful(){
 init(){
   terraform init \
     -backend=true \
-    -backend-config="bucket=rocketseat-${REMOTE_STATE_BUCKET}-${REMOTE_STATE_AWS_REGION}-${ENV}-${ENV_VERSION}" \
+    -backend-config="bucket=${REMOTE_STATE_BUCKET}-${REMOTE_STATE_AWS_REGION}-${ENV}-${ENV_VERSION}" \
     -backend-config="key=${REMOTE_STATE_FILE}" \
     -backend-config="region=${REMOTE_STATE_AWS_REGION}" 
 }

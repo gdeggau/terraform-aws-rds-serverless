@@ -16,7 +16,7 @@ jobs:
     env:
       PROJECT_NAME: iac-aws-rds-serverless
       AWS_REGION: us-east-1
-      REMOTE_STATE_BUCKET: rocketseat-remote-state
+      REMOTE_STATE_BUCKET: rocketseat-terraform-remote-state
       REMOTE_STATE_FILE: iac-aws-rds-serverless-ecr.tfstate
       REMOTE_STATE_AWS_REGION: us-east-1
       PRODUCT: iac
