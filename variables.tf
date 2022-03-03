@@ -35,7 +35,7 @@ variable "engine" {
 }
 
 variable "engineVersion" {
-  default = "10.7"
+  default = "10.14"
 }
 variable "engineMode" {
   default = "serverless"

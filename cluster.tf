@@ -22,5 +22,9 @@ resource "aws_rds_cluster" "default" {
   storage_encrypted       = var.storageEncrypted
   copy_tags_to_snapshot   = var.copyTagsToSnapshot
   deletion_protection     = var.deletionProtection
-  tags                    = local.tags
+  scaling_configuration {
+    min_capacity = var.minCapacity
+    max_capacity = var.maxCapacity
+  }
+  tags = local.tags
 }
