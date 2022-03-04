@@ -1,27 +1,27 @@
 #!/bin/sh
 check_sucessful(){
-  if [ $? != 0 ];
-  then
-    echo "Error execution"
-    exit 1
-  fi
+    if [ $? != 0 ];
+    then
+        echo "Error Execution"
+        exit 1
+    fi
 }
 
-init(){
-  terraform init \
-    -backend=true \
-    -backend-config="bucket=rocketseat-terraform-remote-state-us-east-1-dev-v1" \
-    -backend-config="key=${REMOTE_STATE_FILE}" \
-    -backend-config="region=${REMOTE_STATE_AWS_REGION}" 
+init() {
+    terraform init \
+        -backend=true \
+        -backend-config="bucket=${REMOTE_STATE_BUCKET}-${REMOTE_STATE_AWS_REGION}-${ENV}-${ENV_VERSION}" \
+        -backend-config="key=${REMOTE_STATE_FILE}" \
+        -backend-config="region=${REMOTE_STATE_AWS_REGION}"
+
 }
 
-
-validate(){
-  terraform validate
+validate() {
+    terraform validate
 }
 
 init
-  check_sucessful
+    check_sucessful
 
 validate
-  check_sucessful
+    check_sucessful
